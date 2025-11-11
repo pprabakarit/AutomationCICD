@@ -12,6 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: create script file
+        run: |
+          echo -e "#!/bin/bash\n\necho 'This is a sample script running from GitHub Actions.'" > ./script  
+
       - name: Make script executable and run
         run: |
           if [ -f ./script ]; then
